@@ -49,6 +49,7 @@ public int dfs(int[][] matrix, int i, int j, int m, int n, int[][] cache) {
     
     int max = 1;
     
+    // checking all 4 directions for (i,j)
     for(int[] dir: dirs) {
         int x = i + dir[0];
         int y = j + dir[1];
