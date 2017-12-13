@@ -60,7 +60,7 @@ public class JumpSearch
 /*
 
 Important points:
-- Works only sorted arrays.
+- Works ONLY on sorted arrays.
 - The optimal size of a block to be jumped is O(√ n). This makes the time complexity of Jump Search O(√ n).
 - The time complexity of Jump Search is between Linear Search ( ( O(n) ) and Binary Search ( O (Log n) ).
 - Binary Search is better than Jump Search, but Jump search has an advantage that we traverse back only once 
