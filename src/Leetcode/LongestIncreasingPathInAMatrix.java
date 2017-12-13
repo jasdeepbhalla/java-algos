@@ -16,8 +16,13 @@ The longest increasing path is [1, 2, 6, 9].
 
 */
 
-
-public static final int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+// Directions
+public static final int[][] dirs = {
+                                      {0, 1}, 
+                                      {1, 0}, 
+                                      {0, -1}, 
+                                      {-1, 0}
+                                    };
 
 public int longestIncreasingPath(int[][] matrix) {
     if(matrix.length == 0) 
