@@ -53,6 +53,7 @@ public int dfs(int[][] matrix, int i, int j, int m, int n, int[][] cache) {
         int x = i + dir[0];
         int y = j + dir[1];
         
+        // skip cells that are out of boundary or smaller
         if(x < 0 || x >= m || y < 0 || y >= n || matrix[x][y] <= matrix[i][j]) 
           continue;
       
