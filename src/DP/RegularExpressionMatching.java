@@ -24,6 +24,7 @@ public boolean matchRegex(char[] text, char[] pattern) {
                 //T="x" and pat="xa*", taking True from "x" so going j-2
                 T[i][j] = T[i][j - 2];
                 
+                //T="xa" and pat="xa*"
                 if (pattern[j-2] == '.' || pattern[j - 2] == text[i - 1]) {
                     T[i][j] = T[i][j] | T[i - 1][j];
                 }
