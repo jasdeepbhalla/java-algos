@@ -1,8 +1,34 @@
-all Questions:
+HEAP:
 
 Merge k sorted linked lists and return it as one sorted list.
+
 Given a non-empty array of integers, return the k most frequent elements.
+
 Find the kth largest element in an unsorted array.
 
+Given an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.
+
+Given a non-empty string s and an integer k, rearrange the string such that the same characters are at least distance k from each other.
+
+Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
 
 
+Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+
+Given a n x n matrix where each of the rows and columns are sorted in ascending order, find the kth smallest element in the matrix.
+
+
+Given a string, sort it in decreasing order based on the frequency of characters.
+
+
+Write a program to find the nth super ugly number.
+
+You are given two integer arrays nums1 and nums2 sorted in ascending order and an integer k. Define a pair (u,v) which consists of one element from the first array and one element from the second array. Find the k pairs (u1,v1),(u2,v2) ...(uk,vk) with the smallest sums.
+
+
+Design a simplified version of Twitter where users can post tweets, follow/unfollow another user and is able to see the 10 most recent tweets in the user's news feed.
+
+Given a non-empty list of words, return the k most frequent elements.
+
+You are given an integer array sorted in ascending order (may contain duplicates), you need to split them into several subsequences, where each subsequences consist of at least 3 consecutive integers. Return whether you can make such a split.
