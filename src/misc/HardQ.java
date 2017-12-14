@@ -29,4 +29,12 @@ Follow up:
 assume that the whole matrix cannot be fit in memory and should be read from a file, 
 assume that a few rows and all columns can be read in, how to verify?
 
+In linear algebra, a Toeplitz matrix or diagonal-constant matrix, 
+is a matrix in which each descending diagonal from left to right is constant. 
+For instance, the following matrix is a Toeplitz matrix:
+9     1     3     2
+2     9     1     3
+3     2     9     1
+1     3     2     9
+
 */
