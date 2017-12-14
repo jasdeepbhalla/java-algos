@@ -73,8 +73,7 @@ private int min(int a,int b, int c){
 }
 
 
-
-
+// ****************************************************************************************************************
 
 
 // Min Cost Path 
@@ -104,9 +103,14 @@ public int minCost(int cost[][], int m, int n)
 
 
 
+// ****************************************************************************************************************
+
+
 
 /*
-The Longest Increasing Subsequence (LIS) problem is to find the length of the longest subsequence of a given sequence 
+The Longest Increasing Subsequence (LIS) problem 
+
+is to find the length of the longest subsequence of a given sequence 
 such that all elements of the subsequence are sorted in increasing order. 
 For example, the length of LIS for {10, 22, 9, 33, 21, 50, 41, 60, 80} is 6 and LIS is {10, 22, 33, 50, 60, 80}
 https://www.youtube.com/watch?v=CE2b_-XfVDk
@@ -184,3 +188,10 @@ Each time we only do one of the two:
 (2) if tails[i-1] < x <= tails[i], update tails[i]
 Doing so will maintain the tails invariant. The the final answer is just the size.
 */
+
+    
+    
+// ****************************************************************************************************************
+    
+    
+    
