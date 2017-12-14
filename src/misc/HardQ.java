@@ -84,6 +84,26 @@ As a follow up, solve the case where the whole documents may not be able to fit 
 
 /*
 
+Given a 2D matrix M X N, support two operations:
+Query(row1, col1, row2, col2) such that I get the sum of all numbers 
+in the rectangle ((row1, col1), (row1, col2), (row2, col1), (row2, col2)) 
+and
+Update(row, col) to a new number
+
+And query is a very frequent operation and update is a rare operation, 
+so query should be really fast, but update can be slower.
+
+Follow up: How would you solve this in a distributed fashion
+*/
+
+
+
+
+
+
+
+/*
+
 Verify if a given matrix is a Toeplitz matrix:
 Follow up:
 assume that the whole matrix cannot be fit in memory and should be read from a file, 
