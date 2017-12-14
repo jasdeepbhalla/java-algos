@@ -1,6 +1,6 @@
 
 /*
-Given two strings how many minimum edits(update, delete or add) is needed to convert one string to another
+Given two strings how many minimum edits(update, remove or insert) is needed to convert one string to another
 
 Time : O(m*n)
 Space: O(m*n)
