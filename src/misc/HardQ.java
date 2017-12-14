@@ -37,4 +37,8 @@ For instance, the following matrix is a Toeplitz matrix:
 3     2     9     1
 1     3     2     9
 
+In general, any n×n matrix mat[][] is a Toeplitz matrix 
+if every cell mat[i][j] is same as mat[i-1][j-1], mat[i+1][j+1], mat[i-2][j-2], mat[i+2][j+2], .. 
+for every cell mat[i][j] and all the valid cells mat[i+k][j+k] or mat[i-k][j-k]
+
 */
