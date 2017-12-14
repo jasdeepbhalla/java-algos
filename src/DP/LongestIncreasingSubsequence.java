@@ -10,7 +10,7 @@ https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic
 */
 
 
-//DP
+//DP O(n^2)
 public int longestSubsequenceWithActualSolution(int arr[]){
 {
       int n = arr.length;
@@ -34,4 +34,29 @@ public int longestSubsequenceWithActualSolution(int arr[]){
 
         return max;
 }
+/*
+Note that the time complexity of the above Dynamic Programming (DP) solution is O(n^2) 
+and there is a O(nLogn) solution for the LIS problem explained below. 
+*/
+      
+
+// Binary search based solution O(nLogn)      
+public int lengthOfLIS(int[] nums) {
+    int[] tails = new int[nums.length];
+    int size = 0;
+    for (int x : nums) {
+        int i = 0, j = size;
+        while (i != j) {
+            int m = (i + j) / 2;
+            if (tails[m] < x)
+                i = m + 1;
+            else
+                j = m;
+        }
+        tails[i] = x;
+        if (i == size) ++size;
+    }
+    return size;
+}
+      
 
