@@ -68,7 +68,7 @@
 	• Divide and Conquer
 	
 	• Trees
-		○ [BFS](www.google.com) & DFS
+		○ BFS & DFS
 		○ Traversals: Inorder, postorder and preorder
 		○ Trie
 			§ How to implement reverse /forward DNS lookup Cache.
