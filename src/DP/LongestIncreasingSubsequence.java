@@ -12,49 +12,26 @@ https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic
 
 //DP
 public int longestSubsequenceWithActualSolution(int arr[]){
-    int T[] = new int[arr.length];
-    int actualSolution[] = new int[arr.length];
-    
-    for(int i=0; i < arr.length; i++){
-        T[i] = 1;
-        actualSolution[i] = i;
-    }
+{
+      int n = arr.length;
+      int lis[] = new int[n];
+      int i,j,max = 0;
 
-    for(int i=1; i < arr.length; i++){
-        for(int j=0; j < i; j++){
-        
-            if(arr[i] > arr[j]){
-            
-                if(T[j] + 1 > T[i]){
-                
-                    T[i] = T[j] + 1;
-                    //set the actualSolution to point to guy before me
-                    actualSolution[i] = j;
-                }
-            }
-        }
-    }
+      /* Initialize LIS values for all indexes */
+       for ( i = 0; i < n; i++ )
+          lis[i] = 1;
 
-    //find the index of max number in T 
-    int maxIndex = 0;
-    for(int i=0; i < T.length; i++){
-        if(T[i] > T[maxIndex]){
-            maxIndex = i;
-        }
-    }
+       /* Compute optimized LIS values in bottom up manner */
+       for ( i = 1; i < n; i++ )
+          for ( j = 0; j < i; j++ ) 
+             if ( arr[i] > arr[j] && lis[i] < lis[j] + 1)
+                lis[i] = lis[j] + 1;
 
-    //lets print the actual solution
-    int t = maxIndex;
-    int newT = maxIndex;
-    
-    do{
-        t = newT;
-        System.out.print(arr[t] + " ");
-        newT = actualSolution[t];
-    }while(t != newT);
-    
-    System.out.println();
+       /* Pick maximum of all LIS values */
+       for ( i = 0; i < n; i++ )
+          if ( max < lis[i] )
+             max = lis[i];
 
-    return T[maxIndex];
+        return max;
 }
-    
+
