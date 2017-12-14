@@ -5,7 +5,8 @@ public boolean matchRegex(char[] text, char[] pattern) {
     boolean T[][] = new boolean[text.length + 1][pattern.length + 1];
     T[0][0] = true;
 
-    //Deals with patterns like a* or a*b* or a*b*c*
+    // Deals with patterns like a* or a*b* or a*b*c*
+    // These patterns match empty text
     for (int i = 1; i < T[0].length; i++) {
         if (pattern[i-1] == '*') {
             T[0][i] = T[0][i - 2];
