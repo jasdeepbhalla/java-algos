@@ -198,6 +198,7 @@ public int calculate(int eggs, int floors){
     int T[][] = new int[eggs+1][floors+1];
     int c =0;
     
+    // With 1 egg min num of attempts = no of floor
     for(int i=0; i <= floors; i++){
         T[1][i] = i;
     }
