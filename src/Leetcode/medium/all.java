@@ -158,9 +158,12 @@ public class Codec {
     
     // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
-        if (revIndex.containsKey(longUrl)) return BASE_HOST + revIndex.get(longUrl);
+        if (revIndex.containsKey(longUrl)) 
+            return BASE_HOST + revIndex.get(longUrl);
+        
         String charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         String key = null;
+        
         do {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 6; i++) {
@@ -168,7 +171,9 @@ public class Codec {
                 sb.append(charSet.charAt(r));
             }
             key = sb.toString();
+            
         } while (index.containsKey(key));
+        
         index.put(key, longUrl);
         revIndex.put(longUrl, key);
         return BASE_HOST + key;
