@@ -552,10 +552,13 @@ public List<List<Integer>> threeSum(int[] num) {
                     
                     lo++; 
                     hi--;
-                } else if (num[lo] + num[hi] < sum) 
+                    
+                } else if (num[lo] + num[hi] < sum){ 
                     lo++;
-                
-                else hi--;
+                }
+                else{ 
+                    hi--;
+                }
            }
         }
     }
