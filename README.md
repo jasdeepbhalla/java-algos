@@ -8,4 +8,4 @@
 
 
 
-[Sorting](https://github.com/jasdeepbhalla/java-algos/blob/master/src/sorting/AllSorting.java)
+[All Sorting Algos](https://github.com/jasdeepbhalla/java-algos/blob/master/src/sorting/AllSorting.java)
