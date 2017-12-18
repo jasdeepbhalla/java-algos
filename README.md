@@ -16,7 +16,7 @@
 
 
 [All Sorting Algos](https://github.com/jasdeepbhalla/java-algos/blob/master/src/sorting/AllSorting.java)
-* Bubble Sort
+• Bubble Sort
 * Selection Sort
 * Insertion Sort
 * Quick Sort
