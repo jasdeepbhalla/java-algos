@@ -37,3 +37,29 @@ public int ternary_search(int l,int r, int x)
     }
     return -1;
 }
+
+/*
+Let us consider the following example to understand the code.
+
+Let the sorted array be arr[] = {2,3,5,6,8,9,12,13,14} with indices from 0 to 8. 
+You are required to find the position of x = 13 in this array. 
+
+Divide the sorted array into the following 3 parts by evaluating the values of mid1 and mid2
+{2,3,5}
+{6,8,9}
+{12,13,14}
+
+Here ar[mid1]=5 and ar[mid2]=12. 
+
+As 13 
+	-> is not equal to ar[mid1] and ar[mid2] and 
+	-> is also not smaller than ar[mid1], 
+
+you can safely assume that it lies in the 3rd part of the array as it is greater than ar[mid2].
+
+So Searching in third array then, run the ternary search again with l = 7 and r = 8.
+Now, ar[mid1] = ar[7] = 13 and ar[mid2] = ar[8] = 14.As ar[mid1] = x, mid1 is the required answer.
+If the value is not in the array, it returns −1 as the answer.
+
+Complexity: O(logn), where N is the size of the array
+*/
