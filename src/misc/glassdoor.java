@@ -1,5 +1,7 @@
 // Java code to find largest three elements
 // in an array
+// O(n) 
+// O(1)
  
 class PrintLargest
 {
