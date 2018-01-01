@@ -1,5 +1,6 @@
 
 // Longest Common Subsequence
+// O(mn)
 public int lcsDynamic(char str1[],char str2[]){
 
     int temp[][] = new int[str1.length + 1][str2.length + 1];
