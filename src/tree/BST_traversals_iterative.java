@@ -52,6 +52,7 @@ class BinaryTree {
                 }
             }
         }
+    }
         
         
      void iterativePreorder(Node node) {
