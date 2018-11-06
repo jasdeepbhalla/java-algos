@@ -41,6 +41,48 @@ public class Solution {
 }
 
 // ------------------------------------------------------------------------------------------------------------
+// Add two numbers 2 - O(n)
+You are given two non-empty linked lists representing two non-negative integers. 
+The most significant digit comes first and each of their nodes contain a single digit. 
+Add the two numbers and return it as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+Follow up:
+What if you cannot modify the input lists? In other words, reversing the lists is not allowed.
+
+Example:
+
+Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 8 -> 0 -> 7
+	
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+	Stack<Integer> s1 = new Stack<Integer>();
+	Stack<Integer> s2 = new Stack<Integer>();
+
+	while(l1 != null) {
+	    s1.push(l1.val);
+	    l1 = l1.next;
+	};
+	while(l2 != null) {
+	    s2.push(l2.val);
+	    l2 = l2.next;
+	}
+
+	int sum = 0;
+	ListNode list = new ListNode(0);
+	while (!s1.empty() || !s2.empty()) {
+	    if (!s1.empty()) sum += s1.pop();
+	    if (!s2.empty()) sum += s2.pop();
+	    list.val = sum % 10;
+	    ListNode head = new ListNode(sum / 10);
+	    head.next = list;
+	    list = head;
+	    sum /= 10;
+	}
+	return list.val == 0 ? list.next : list;
+}
+
+// ------------------------------------------------------------------------------------------------------------
 // Merge two sorted LLs
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
@@ -469,3 +511,113 @@ public ListNode swapPairs(ListNode head) {
 }
 
 // ------------------------------------------------------------------------------------------------------------
+// Reorder List
+Given a singly linked list L: L0→L1→…→Ln-1→Ln,
+reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
+You may not modify the values in the list's nodes, only nodes itself may be changed.
+Given 1->2->3->4, reorder it to 1->4->2->3.
+Given 1->2->3->4->5, reorder it to 1->5->2->4->3.
+
+public void reorderList(ListNode head) {
+    if(head==null||head.next==null) return;
+
+    //Find the middle of the list
+    ListNode p1=head;
+    ListNode p2=head;
+    while(p2.next!=null&&p2.next.next!=null){ 
+	p1=p1.next;
+	p2=p2.next.next;
+    }
+
+    //Reverse the half after middle  1->2->3->4->5->6 to 1->2->3->6->5->4
+    ListNode preMiddle=p1;
+    ListNode preCurrent=p1.next;
+    while(preCurrent.next!=null){
+	ListNode current=preCurrent.next;
+	preCurrent.next=current.next;
+	current.next=preMiddle.next;
+	preMiddle.next=current;
+    }
+
+    //Start reorder one by one  1->2->3->6->5->4 to 1->6->2->5->3->4
+    p1=head;
+    p2=preMiddle.next;
+    while(p1!=preMiddle){
+	preMiddle.next=p2.next;
+	p2.next=p1.next;
+	p1.next=p2;
+	p1=p2.next;
+	p2=preMiddle.next;
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------------
+// Remove Nth node from end of list
+Given linked list: 1->2->3->4->5, and n = 2.
+After removing the second node from the end, the linked list becomes 1->2->3->5.
+
+public ListNode removeNthFromEnd(ListNode head, int n) {
+    
+    ListNode start = new ListNode(0);
+    ListNode slow = start, fast = start;
+    slow.next = head;
+    
+    //Move fast in front so that the gap between slow and fast becomes n
+    for(int i=1; i<=n+1; i++)   {
+        fast = fast.next;
+    }
+    //Move fast to the end, maintaining the gap
+    while(fast != null) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+    //Skip the desired node
+    slow.next = slow.next.next;
+    return start.next;
+}
+
+// ------------------------------------------------------------------------------------------------------------
+// Remove dups from sorted list
+Given a sorted linked list, delete all duplicates such that each element appear only once.
+Input: 1->1->2
+Output: 1->2
+	
+public ListNode deleteDuplicates(ListNode head) {
+	ListNode node = head;
+	while (node != null && node.next != null) {
+	    if (node.val == node.next.val) 
+		node.next = node.next.next;
+	    else 
+		node = node.next;
+	}
+	return head;
+}
+
+// ------------------------------------------------------------------------------------------------------------
+// Remove LL elements
+Remove all elements from a linked list of integers that have value val.
+Input:  1->2->6->3->4->5->6, val = 6
+Output: 1->2->3->4->5
+	
+public ListNode removeElements(ListNode head, int val) {
+	ListNode fakeHead = new ListNode(-1);
+	fakeHead.next = head;
+	ListNode curr = head, prev = fakeHead;
+	
+	while (curr != null) {
+	    if (curr.val == val) {
+		prev.next = curr.next;
+	    } else {
+		prev = prev.next;
+	    }
+	    curr = curr.next;
+	}
+	return fakeHead.next;
+}
+
+// ------------------------------------------------------------------------------------------------------------
+Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
+Given this linked list: 1->2->3->4->5
+For k = 2, you should return: 2->1->4->3->5
+For k = 3, you should return: 3->2->1->4->5
+	
