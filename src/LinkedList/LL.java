@@ -112,3 +112,58 @@ public RandomListNode copyRandomList(RandomListNode head) {
   return pseudoHead.next;
 }
 
+
+
+// reverse LL
+Input: 1->2->3->4->5->NULL
+Output: 5->4->3->2->1->NULL
+
+public ListNode reverseList(ListNode head) {
+    /* iterative solution */
+    ListNode newHead = null;
+    while (head != null) {
+        ListNode next = head.next;
+        head.next = newHead;
+        newHead = head;
+        head = next;
+    }
+    return newHead;
+}
+
+// recursive
+public ListNode reverseList(ListNode head) {
+    /* recursive solution */
+    return reverseListInt(head, null);
+}
+
+private ListNode reverseListInt(ListNode head, ListNode newHead) {
+    if (head == null)
+        return newHead;
+    ListNode next = head.next;
+    head.next = newHead;
+    return reverseListInt(next, head);
+}
+
+
+
+
+// LL cycle
+public boolean hasCycle(ListNode head) {
+    if(head==null) 
+        return false;
+    ListNode walker = head;
+    ListNode runner = head;
+    
+    while(runner.next!=null && runner.next.next!=null) {
+        walker = walker.next;
+        runner = runner.next.next;
+        
+        if(walker==runner) 
+            return true;
+    }
+    return false;
+}
+
+
+
+
